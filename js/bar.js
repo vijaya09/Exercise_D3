@@ -14,7 +14,7 @@ var color = d3.scaleOrdinal(["#6b486b", "#d0743c", "#98abc5"]);
   x.domain(newdata.map(function(d) {
     return d.name;
   }));
-  y.domain([0, 150]);
+  y.domain([0, 100]);
 
   g.append("g")
       .attr("class", "axis axis--x")
