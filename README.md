@@ -23,6 +23,6 @@ We can test the following scenarios from front end with 100 mutations:
 4.	Change both values for data that is not available (ex: insertion type and chromosome 9) and check no data is showing.
 5.	Display error message if no response from query.
 
-6.  Test the same with differing mutations like 1000 mutations, 10,000 mutations etc depending on required scope of the tool to make sure results are expected.
+Test the same with differing mutations like 1000 mutations, 10,000 mutations etc depending on required scope of the tool to make sure results are expected.
 
 We can write unit test for js functions to make sure they are behaving as expected.
