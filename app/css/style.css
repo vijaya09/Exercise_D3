@@ -14,3 +14,20 @@
 .chromosome {
   display: inherit;
 }
+
+h2.error {
+  color: red;
+  text-align: center;
+}
+
+.container{
+  border: 2px solid black;
+}
+
+.mutationTypeOverview{
+  border-right: 2px solid black;
+}
+
+h3, h1{
+  text-align: center;
+}

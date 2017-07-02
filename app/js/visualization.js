@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
    //getting data from the dcc.icgc.org
    d3.request(url)
     .mimeType("application/json")
-    .get(function(xhr){
-      var data = JSON.parse(xhr.responseText);
+    .get(function(xhr, data){
+      if(data && data.responseText){
+      var data = JSON.parse(data.responseText);
         $.each(data.hits, function(index, item){
           if(!mutationTypeData[item.type]){
             mutationTypeData[item.type] = [];
@@ -152,6 +153,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
       //and chromosome overview for all chromosomes
       barChart('#mutationType', newTypeData);
       pieChart('#chromosome', newChromeData);
+    }else if(xhr!=null && xhr.type == "error"){
+      $('.container').html("<h2 class='error'>System error please try again later</h2>")
+    }else {
+      $('.container').html("<h2>No data available</h2>")
+    }
   });
 });
 //function to check the length and update the view
