@@ -10,3 +10,7 @@
 #chromosome {
   padding-top: 10px;
 }
+
+.chromosome {
+  display: inherit;
+}
