@@ -5,12 +5,13 @@
 1)clone the git repository by using the following command:
   `git clone https://github.com/vijaya09/Exercise_D3.git`
 
-2)Navigate to the folder Exercise_D3 and then do `npm i` to install the dependencies.
+2)Navigate to the folder Exercise_D3 and if you already have the `node` installed on your machine then run `npm i` to install the dependencies otherwise install `node` before running `npm i`.
 
-3)Now open `index.html` in the browser (or) you can run on localhost using the following command:
-  `node "path-to-ur-local-Exercise_D3"/node_modules/http-server/bin/http-server`
-
-4)Now open the browser and got to `http://127.0.0.1:8080`. You can see the visualization tool!!
+3)Now open `index.html` in the browser. You can see the visualization tool!!
+                                    (or)
+3)You can run on localhost using the following command:
+  `node "path-to-ur-local-Exercise_D3"/node_modules/http-server/bin/http-server`.
+Now open the browser and go to `http://127.0.0.1:8080`. You can see the visualization tool!!
 
 #How this system could be tested?
 
