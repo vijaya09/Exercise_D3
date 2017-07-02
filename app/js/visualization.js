@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
         //on mutation type change update the type overview and chromosome overview
         $('.mutationType').change(function(e){
-          var mutationData = [], chromeData=[], mc={}, mutationChromeData=[], mcObj, cs={}, chromeObj, obj;
+          var mutationData = [], chromeData=[], mc={}, mutationChromeData=[], mcObj, chromosome={}, chromeObj, obj;
           //empty the type overview before updating it
           $("#mutationType").empty();
           if(e.target.value != 'Select All'){
@@ -54,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
               based on mutation type selection and chromosome selection. */
               if($('.chromosome')[0].value != 'Select All'){
                 if((mutationData[0].name == val.type) && ($('.chromosome')[0].value == val.chromosome)){
-                  if(!cs[val.chromosome]){
-                    cs[val.chromosome] = [];
+                  if(!chromosome[val.chromosome]){
+                    chromosome[val.chromosome] = [];
                   }
-                  cs[val.chromosome].push(val);
+                  chromosome[val.chromosome].push(val);
                   if(!mc[val.type]){
                     mc[val.type] = [];
                   }
@@ -68,18 +68,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
               update the type overview and chromosome overview based on the mutation type and
               for all chromosomes. */
               else if(mutationData[0].name == val.type && ($('.chromosome')[0].value == 'Select All')){
-                if(!cs[val.chromosome]){
-                  cs[val.chromosome] = [];
+                if(!chromosome[val.chromosome]){
+                  chromosome[val.chromosome] = [];
                 }
-                cs[val.chromosome].push(val);
+                chromosome[val.chromosome].push(val);
                 if(!mc[val.type]){
                   mc[val.type] = [];
                 }
                 mc[val.type].push(val);
               }
             });
-            for(var name in cs){
-              chromeObj = {name: name, length: cs[name].length }
+            for(var name in chromosome){
+              chromeObj = {name: name, length: chromosome[name].length }
               chromeData.push(chromeObj);
             }
             for(var name in mc){
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
       pieChart('#chromosome', newChromeData);
   });
 });
-
+//function to check the length and update the view
 function checkLength(typeData, chromoData, typeId, typeClass, chromoId, chromoClass){
   if(typeData.length > 0 && $(typeId).length == 0){
     $('.noMutationData').length > 0 ? $('.noMutationData').remove() : '';
