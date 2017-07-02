@@ -7,7 +7,7 @@
   stroke: #fff;
 }
 
-#chromosome {
+#chromosome, #mutationType {
   padding-top: 10px;
 }
 

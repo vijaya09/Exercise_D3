@@ -39,6 +39,18 @@ var color = d3.scaleOrdinal(["#6b486b", "#d0743c", "#98abc5"]);
       .attr("y", function(t) { return y(t.length); })
       .attr("fill", function(t) { return color(t.name); })
       .attr("width", x.bandwidth())
+      .on("mouseover", function(d, i) {
+       svg.append("text")
+         .attr("dy", ".5em")
+         .style("text-anchor", "right")
+         .style("font-size", 20)
+         .attr("class","label")
+         .style("fill", function(d,i){return "black";})
+         .text("Mutation "+d.name+", count is "+d.length);
+       })
+       .on("mouseout", function(d) {
+         svg.select(".label").remove();
+       })
       .attr("height", function(t) { return height- y(t.length); });
 
 }
