@@ -1,5 +1,13 @@
 # Exercise_D3
 
+#How to install Exercise_D3?
+1)clone the git repository by using the following command:
+  `git clone https://github.com/vijaya09/Exercise_D3.git`
+
+2)Navigate to the folder Exercise_D3 and then do `npm i` to install the dependencies.
+
+3)Now open `index.html` in the browser.
+
 #How this system could be tested?
 
 1) On visualization tool loads, it displays all the data for all mutation types and all chromosomes.
